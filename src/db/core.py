@@ -1,3 +1,4 @@
+from http.client import GATEWAY_TIMEOUT
 from pydantic import AnyHttpUrl, BaseSettings, HttpUrl, validator
 from typing import List, Optional, Union
 from dotenv import load_dotenv
@@ -5,12 +6,16 @@ import os
 
 load_dotenv()
 
+
 class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     DATABASE_URL: str = os.environ.get("DATABASE_URL")
     SECRET_KEY: str = os.environ.get("SECRET_KEY")
     ALGORITHM: str = os.environ.get("ALGORITHM")
-   
+    STORE_ID: str = os.environ.get("STORE_ID")
+    SIGNATURE_KEY: str = os.environ.get("SIGNATURE_KEY")
+    GATEWAY_URL: str = os.environ.get("GATEWAY_URL")
+
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = [
         os.environ.get("URL_ONE"),
         os.environ.get("URL_TWO"),
@@ -24,7 +29,7 @@ class Settings(BaseSettings):
             return v
         raise ValueError(v)
 
-    PROJECT_NAME: str = "FastAPI Auth"
+    PROJECT_NAME: str = "FastAPI Payment"
     SENTRY_DSN: Optional[HttpUrl] = None
 
     class Config:
