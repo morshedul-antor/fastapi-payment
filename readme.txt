@@ -25,3 +25,7 @@ ALGORITHM=HS256
 DATABASE_URL=mysql+mysqlconnector://root:@localhost:3306/auth
 URL_ONE=http://localhost:3000
 URL_TWO=https://localhost:3000
+
+STORE_ID=aamarpaytest
+SIGNATURE_KEY=dbb74894e82415a2f7ff0ec3a97e4183
+GATEWAY_URL=https://sandbox.aamarpay.com/jsonpost.php
