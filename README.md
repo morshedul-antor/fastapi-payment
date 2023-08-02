@@ -1,1 +1,1 @@
-# FastAPI Payment Gateway (AammarPay)
+# FastAPI Payment Gateway (AamarPay)
