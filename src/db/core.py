@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     STORE_ID: str = os.environ.get("STORE_ID")
     SIGNATURE_KEY: str = os.environ.get("SIGNATURE_KEY")
     GATEWAY_URL: str = os.environ.get("GATEWAY_URL")
+    DETAILS_URL: str = os.environ.get("DETAILS_URL")
 
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = [
         os.environ.get("URL_ONE"),
