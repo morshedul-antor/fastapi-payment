@@ -12,12 +12,9 @@ class PaymentBase(BaseModel):
 
 
 class PaymentIn(PaymentBase):
-    trx_id: Optional[str] = None
     receiver_id: Optional[int] = None
-
-
-class PaymentDBIn(PaymentIn):
     service_id: Optional[int] = None
+    trx_id: Optional[str] = None
 
 
 class PaymentOut(PaymentIn):
